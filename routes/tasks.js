@@ -45,8 +45,6 @@ export const getTasks = (req, res) => {
    
 export const updateTask = (req, res) => {
     const status = JSON.stringify(req.body.completed)
-    console.log(status);
-    console.log(req.body.taskId);
     // Check if the note with the given ID belongs to the authenticated user
     const updateNoteQuery = "UPDATE tasks SET completed = ? WHERE taskId = ?";
         
