@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser"
 import multer from "multer"
 import path from "path"
 import { userLogin } from "./routes/users.js"
-import { createNote, getNotes, getSingleNote, deleteSingleNote, updateNote} from "./routes/notes.js"
+import { createNote, getNotes, getSingleNote, deleteSingleNote, updateNote, searchNote} from "./routes/notes.js"
 import { createTask, getTasks, updateTask, deleteTask } from "./routes/tasks.js"
 
 const app = express()
@@ -31,7 +31,7 @@ app.get('/getnotes', getNotes)
 app.get('/notes/:id', getSingleNote)
 app.delete('/notes/deletenote/:id', deleteSingleNote)
 app.post('/notes/updatenote/:id', updateNote)
-
+app.get('/search', searchNote)
 
 app.post('/createtask', createTask)
 app.post('/updatetask/:id', updateTask)
