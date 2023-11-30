@@ -109,3 +109,27 @@ export const updateNote = (req, res) => {
         });
     });
 };
+
+export const searchNote = (req, res) => {
+    const searchTerm = req.query.searchTerm;
+    let searchValue = `%${searchTerm}%`;
+  
+    if (!searchTerm) {
+      searchValue = "";
+    }
+  
+    const query = `
+        SELECT * FROM notes
+  WHERE content LIKE ?;
+      `;
+  
+    pool.query(query, [searchValue], (err, results) => {
+      if (err) {
+        console.error("Error executing query", err);
+        return res.status(500).json({ error: "Internal Server Error" });
+      }
+  
+      res.json(results);
+    });
+  };
+  
