@@ -31,7 +31,7 @@ app.get('/getnotes', getNotes)
 app.get('/notes/:id', getSingleNote)
 app.delete('/notes/deletenote/:id', deleteSingleNote)
 app.post('/notes/updatenote/:id', updateNote)
-app.get('/search', searchNote)
+// app.get('/search', searchNote)
 
 
 app.post('/createtask', createTask)
