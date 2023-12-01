@@ -9,7 +9,7 @@ import { createTask, getTasks, updateTask, deleteTask } from "./routes/tasks.js"
 
 const app = express()
 app.use(cors({
-    origin: ['https://desp0o.github.io', 'https://desp0o.github.io/evernote-front', 'http://localhost:5173', 'http://localhost:5173/evernote-front/'],
+    origin: ['https://desp0o.github.io', 'https://desp0o.github.io/evernote-front', 'http://localhost:5173', 'http://localhost:3000', 'http://localhost:5173/evernote-front/'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
