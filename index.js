@@ -9,7 +9,7 @@ import { createTask, getTasks, updateTask, deleteTask } from "./routes/tasks.js"
 
 const app = express()
 app.use(cors({
-    origin: ['http://localhost:1234',  'https://656b63b168c8cf64d797eb49--musical-beijinho-a0eaae.netlify.app'],
+    origin: ['http://localhost:1234',  'https://deft-narwhal-c3f473.netlify.app'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
