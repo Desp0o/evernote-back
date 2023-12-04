@@ -10,8 +10,8 @@ export const createNote = (req, res) => {
         }
 
         if (userData.length > 0) {
-            const noteQuery = "INSERT INTO notes (`noteTitle`, `content`, `uid`) VALUES (?, ?, ?)";
-            pool.query(noteQuery, [req.body.noteTitle, req.body.content, req.body.user.uid], (noteErr, noteData) => {
+            const noteQuery = "INSERT INTO notes (`noteTitle`, `content`, `uid`, `syntaxed`) VALUES (?, ?, ?, ?)";
+            pool.query(noteQuery, [req.body.noteTitle, req.body.content, req.body.user.uid, req.body.syntaxed], (noteErr, noteData) => {
                 if (noteErr) {
                     return res.status(500).json("Error creating note");
                 }
