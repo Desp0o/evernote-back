@@ -11,7 +11,7 @@ app.use(cors({
     origin: ['http://localhost:1234', 'https://verdant-donut-5378cb.netlify.app', 'https://dev--verdant-donut-5378cb.netlify.app', 'https://verdant-donut-5378cb.netlify.app'],                     
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'XMLHttpRequest'],
   }));
 
 app.use(cookieParser()); 
