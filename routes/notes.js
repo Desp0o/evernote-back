@@ -113,17 +113,18 @@ export const updateNote = (req, res) => {
 export const searchNote = (req, res) => {
     const searchTerm = req.query.searchTerm;
     let searchValue = `%${searchTerm}%`;
+    const uid = req.query.uid
   
     if (!searchTerm) {
       searchValue = "";
     }
   
     const query = `
-        SELECT * FROM notes
-  WHERE content LIKE ?;
-      `;
+    SELECT * FROM notes
+    WHERE uid = ? AND content LIKE ?;
+`;
   
-    pool.query(query, [searchValue], (err, results) => {
+    pool.query(query, [uid, searchValue], (err, results) => {
       if (err) {
         console.error("Error executing query", err);
         return res.status(500).json({ error: "Internal Server Error" });
