@@ -8,7 +8,7 @@ import { addFile, getFiles, deleteFile } from "./routes/files.js"
 
 const app = express()
 app.use(cors({
-    origin: ['http://localhost:1234', 'https://charming-bubblegum-0838fc.netlify.app/#/', 'https://charming-bubblegum-0838fc.netlify.app'],              
+    origin: ['http://localhost:1234', 'https://charming-bubblegum-0838fc.netlify.app/#/', 'https://charming-bubblegum-0838fc.netlify.app', 'https://devweb.cc'],              
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization', 'XMLHttpRequest'],
